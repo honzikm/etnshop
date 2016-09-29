@@ -14,6 +14,12 @@
 
 <div class="container">
 	<h2>Products</h2>
+	<div>
+		<form action="/etnshop/product/search" method="post">
+			<input type="text" id="key" name="key" /> 
+			<input class="btn btn-primary btn-lg" type="submit" value="Search" /> 
+		</form>
+	</div>
 	<table class="table">
 		<thead>
 			<tr>
@@ -27,7 +33,9 @@
 				<tr>
 					<td>${product.id}</td>
 					<td>${product.serialNumber}</td>
-					<td>${product.name}</td>					
+					<td>${product.name}</td>
+					<td><a href="/etnshop/product/editProduct?id=${product.id}">Edit</a></td>
+					<td><a href="/etnshop/product/deleteProduct?id=${product.id}">Delete</a></td>					
 				</tr>	
 			</c:forEach>
 		</tbody>
@@ -35,6 +43,7 @@
 	<hr>
 	<p>
 		<a class="btn btn-primary btn-lg" href="/etnshop" role="button">Back to homepage</a>
+		<a class="btn btn-primary btn-lg" href="/etnshop/product/newProduct" role="button">New product</a>
 	</p>
 	<footer>
 		<p>&copy; Etnetera a.s. 2015</p>

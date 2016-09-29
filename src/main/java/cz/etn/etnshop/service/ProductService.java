@@ -10,5 +10,17 @@ public interface ProductService {
 
 	@Transactional(readOnly = true)
 	List<Product> getProducts();
+	
+	@Transactional(readOnly = true)
+	List<Product> getProducts(String key);
+	
+	@Transactional
+	void saveOrUpdateProduct(Product product);
+
+	@Transactional
+	void removeProduct(Integer id);
+
+	@Transactional(readOnly = true)
+	Product getProduct(Integer id);
 
 }

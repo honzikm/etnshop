@@ -19,7 +19,7 @@ public class Product implements Serializable {
 
 	private String name;
 	
-	private int serialNumber;
+	private String serialNumber;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,11 +41,11 @@ public class Product implements Serializable {
 	}
 
 	@Column(name = "serialNumber", nullable = false)
-	public int getSerialNumber() {
+	public String getSerialNumber() {
 		return serialNumber;
 	}
 	
-	public void setSerialNumber(int serialNumber) {
+	public void setSerialNumber(String serialNumber) {
 		this.serialNumber = serialNumber;
 	}
 }
